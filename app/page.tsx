@@ -178,7 +178,7 @@ const pricing = [
     installment: "или 17 500 ₽ × 2 платежа",
     features: [
       "15 занятий онлайн в Zoom",
-      "Записи лекций навсегда",
+      "Записи лекций в течение месяца по окончании курса",
       "Материалы и списки литературы",
       "Письменный разбор синопсиса — в течение 5 дней",
       "Разбор поэпизодника с комментариями по каждой сцене",
@@ -271,10 +271,19 @@ export default function Page() {
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
 
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setReviewIdx((prev) => (prev + 1) % reviews.length)
+    }, 5000)
+    return () => clearInterval(timer)
+  }, [])
+
+  const prevReview = () => setReviewIdx((prev) => (prev - 1 + reviews.length) % reviews.length)
+  const nextReview = () => setReviewIdx((prev) => (prev + 1) % reviews.length)
+
   const navItems = [
     ["#about", "О курсе"],
     ["#program", "Программа"],
-    ["#films", "Фильмы"],
     ["#author", "Автор"],
     ["#reviews", "Отзывы"],
     ["#pricing", "Стоимость"],
@@ -426,6 +435,7 @@ export default function Page() {
         </div>
       </section>
 
+      {/* === MATERIALS (скрыто) ===
       <section className="section films" id="films">
         <div className="container">
           <div className="sec-label">Материалы курса</div>
@@ -454,6 +464,7 @@ export default function Page() {
           </div>
         </div>
       </section>
+      === */}
 
       <section className="section author" id="author">
         <div className="container">
@@ -549,8 +560,11 @@ export default function Page() {
           <div className="sec-label">Отзывы</div>
           <h2 className="sec-title">Что говорят студенты</h2>
           <div className="reviews-carousel">
+            <button className="reviews-arrow reviews-arrow-left" onClick={prevReview} aria-label="Предыдущий отзыв">
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth={2}><path d="M12.5 5l-5 5 5 5" /></svg>
+            </button>
             <div className="reviews-track" style={{ transform: `translateX(-${reviewIdx * 100}%)` }}>
-              {reviews.map((r, i) => (
+              {reviews.map((r) => (
                 <div key={r.name} className="review-card">
                   <div className="review-avatar">{r.name.charAt(0)}</div>
                   <p className="review-text">{`"${r.text}"`}</p>
@@ -561,6 +575,9 @@ export default function Page() {
                 </div>
               ))}
             </div>
+            <button className="reviews-arrow reviews-arrow-right" onClick={nextReview} aria-label="Следующий отзыв">
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth={2}><path d="M7.5 5l5 5-5 5" /></svg>
+            </button>
           </div>
           <div className="reviews-dots">
             {reviews.map((_, i) => (
@@ -578,7 +595,7 @@ export default function Page() {
       <section className="section pricing" id="pricing">
         <div className="container">
           <div className="sec-label">Стоимость</div>
-          <h2 className="sec-title">Формат обучения</h2>
+          <h2 className="sec-title">Стоимость курса</h2>
           <div className="pricing-grid pricing-single">
             {pricing.map((p) => (
               <div key={p.name} className="pricing-card">
@@ -632,7 +649,7 @@ export default function Page() {
           <h2 className="cta-title">Начните писать свой сценарий</h2>
           <p className="cta-desc">Превратите любимый текст в кино — от первой страницы до готового поэпизодника.</p>
           <a href="#pricing" className="btn btn-white">
-            Выбрать тариф
+            Записаться
           </a>
           <p className="cta-note">Следующий поток — уточните дату при записи</p>
         </div>

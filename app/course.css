@@ -820,11 +820,36 @@
    ============================ */
 .reviews { background: var(--paper-alt); }
 .reviews-carousel {
+    position: relative;
     overflow: hidden;
     border-radius: var(--c-radius);
     background: var(--c-card);
     border: 1px solid var(--line);
 }
+.reviews-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--c-card);
+    border: 1px solid var(--line);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ink-soft);
+    transition: var(--transition);
+}
+.reviews-arrow:hover {
+    background: var(--paper-alt);
+    color: var(--c-accent);
+    border-color: var(--c-accent);
+}
+.reviews-arrow-left { left: 12px; }
+.reviews-arrow-right { right: 12px; }
 .reviews-track {
     display: flex;
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
