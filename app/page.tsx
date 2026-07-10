@@ -173,44 +173,43 @@ const skills = [
 
 const pricing = [
   {
-    name: "Базовый",
-    price: "15 000 ₽",
-    installment: "или рассрочка от 1 250 ₽/мес",
+    name: "35 000 ₽",
+    price: "35 000 ₽",
+    installment: "или 17 500 ₽ × 2 платежа",
     features: [
       "15 занятий онлайн в Zoom",
       "Записи лекций навсегда",
       "Материалы и списки литературы",
-      "Сертификат об окончании",
-    ],
-    btnClass: "btn btn-dark",
-    subject: "Базовый",
-  },
-  {
-    name: "С разбором",
-    price: "35 000 ₽",
-    installment: "или рассрочка от 2 917 ₽/мес",
-    featured: true,
-    features: [
-      "Всё из Базового",
       "Письменный разбор синопсиса — в течение 5 дней",
       "Разбор поэпизодника с комментариями по каждой сцене",
       "Личный фидбек от Екатерины Москвиной",
+      "Сертификат об окончании",
     ],
     btnClass: "btn btn-primary",
-    subject: "С разбором",
+    subject: "Запись",
+  },
+]
+
+const reviews = [
+  {
+    name: "Анна К.",
+    role: "Сценарист",
+    text: "Курс дал мне системный подход к адаптации. До этого я интуитивно понимала, что работает, а теперь знаю — почему. Разбор поэпизодника от Екатерины — это то, ради чего стоит идти.",
   },
   {
-    name: "VIP",
-    price: "65 000 ₽",
-    installment: "или рассрочка от 5 417 ₽/мес",
-    features: [
-      "Всё из «С разбором»",
-      "2 индивидуальные консультации по 60 минут",
-      "Сопровождение 3 месяца после курса",
-      "Закрытый чат выпускников в Telegram",
-    ],
-    btnClass: "btn btn-dark",
-    subject: "VIP",
+    name: "Дмитрий В.",
+    role: "Режиссёр",
+    text: "Методика реально работает. После курса мой синопсис взяли в разработку на студию. Каждое замечание преподавателя — в точку, без воды.",
+  },
+  {
+    name: "Мария Л.",
+    role: "Филолог",
+    text: "Пришла с литературным бэкграундом, ушла с пониманием, как переводить текст на язык кино. Екатерина удивительно точно показывает кинематографическую природу прозы.",
+  },
+  {
+    name: "Сергей Р.",
+    role: "Продюсер",
+    text: "Теперь я иначе читаю сценарии и понимаю, насколько материал кинематографичен. Курс обязателен для всех, кто работает с экранизациями.",
   },
 ]
 
@@ -261,6 +260,7 @@ export default function Page() {
   const [openProg, setOpenProg] = useState<number | null>(null)
   const [openFilm, setOpenFilm] = useState<number | null>(null)
   const [openFaq, setOpenFaq] = useState<number | null>(null)
+  const [reviewIdx, setReviewIdx] = useState(0)
   const rootRef = useRef<HTMLDivElement>(null)
 
   useReveal()
@@ -276,7 +276,8 @@ export default function Page() {
     ["#program", "Программа"],
     ["#films", "Фильмы"],
     ["#author", "Автор"],
-    ["#pricing", "Тарифы"],
+    ["#reviews", "Отзывы"],
+    ["#pricing", "Стоимость"],
     ["#faq", "FAQ"],
   ]
 
@@ -466,9 +467,63 @@ export default function Page() {
               <p className="author-role">Кандидат филологических наук, режиссёр</p>
               <p className="author-bio">
                 Автор курса и преподаватель — кандидат филологических наук, режиссёр{" "}
-                <strong>Екатерина Москвина</strong>. За плечами — многолетний опыт анализа литературных текстов и их
-                перевода на язык кино.
+                <strong>Екатерина Москвина</strong>. За плечами — многолетний опыт преподавания в московских вузах —
+                МПГУ, ВГИК, Институт кино НИУ ВШЭ, Школа кино «Индустрия». Создатель авторских курсов по истории театра и
+                кино, экранизации классики.
               </p>
+
+              <div className="author-books">
+                <span className="author-subtitle">Книги автора</span>
+                <div className="author-books-row">
+                  <div className="ab-card">
+                    <div className="ab-cover" style={{ background: "linear-gradient(135deg, #2b5876, #4e4376)" }}>
+                      <span>Художественный мир<br />Георга Бюхнера</span>
+                    </div>
+                    <div className="ab-meta">Прометей, 2007</div>
+                  </div>
+                  <div className="ab-card">
+                    <div className="ab-cover" style={{ background: "linear-gradient(135deg, #644b3a, #8b6b4a, #a0845c)" }}>
+                      <span>Символическая<br />реальность</span>
+                    </div>
+                    <div className="ab-meta">Глоба-Ком / ЯСК, 2017</div>
+                  </div>
+                  <div className="ab-card">
+                    <div className="ab-cover" style={{ background: "linear-gradient(135deg, #8e2b30, #c94548, #d4726a)" }}>
+                      <span>Языковые игры:<br />от слова к кадру</span>
+                    </div>
+                    <div className="ab-meta">Канон+, 2023</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="author-works">
+                <span className="author-subtitle">Режиссёрские работы</span>
+                <p className="author-works-text">
+                  «Атланты в поисках истины» (ГТРК, 2011), «Возвращение коллекции» (ГТГ, 2011),
+                  «Казаки. Под звуки тирольского вальса» (ГТРК, 2012), «Чудо в Крыму» (2015).
+                  Театр: моноспектакль «Мы виноваты перед ним» (2005), «Путь планет — поэтов путь» (РНДМ, 2018),
+                  «Под небом детства» (НАТ, 2021), «Walther Heymann. Rückkehr» (2022).
+                </p>
+              </div>
+
+              <div className="author-podcasts">
+                <span className="author-subtitle">Подкасты о кино и литературе</span>
+                <div className="ap-list">
+                  <a href="https://www.youtube.com/watch?v=nEyGrAAVxPA&t=4168s" target="_blank" rel="noopener" className="ap-link">
+                    Франц Кафка: «Приговор» (Переплет ТВ)
+                  </a>
+                  <a href="https://www.youtube.com/watch?v=vxzAqp3yWIk&t=124s" target="_blank" rel="noopener" className="ap-link">
+                    Вим Вендерс. Идеальные дни (Dichter und DACHter)
+                  </a>
+                  <a href="https://youtu.be/fILpgZPpoPs?si=ZaKVnVAyCohnJ9D5" target="_blank" rel="noopener" className="ap-link">
+                    «Анатомия падения»: учёные и наука (Физики и лирики)
+                  </a>
+                </div>
+              </div>
+
+              <a href="https://bars4um-sys.github.io/KateM/" target="_blank" rel="noopener" className="btn btn-dark author-portfolio-btn">
+                Полное портфолио →
+              </a>
             </div>
           </div>
         </div>
@@ -489,19 +544,49 @@ export default function Page() {
         </div>
       </section>
 
+      <section className="section reviews" id="reviews">
+        <div className="container">
+          <div className="sec-label">Отзывы</div>
+          <h2 className="sec-title">Что говорят студенты</h2>
+          <div className="reviews-carousel">
+            <div className="reviews-track" style={{ transform: `translateX(-${reviewIdx * 100}%)` }}>
+              {reviews.map((r, i) => (
+                <div key={r.name} className="review-card">
+                  <div className="review-avatar">{r.name.charAt(0)}</div>
+                  <p className="review-text">{`"${r.text}"`}</p>
+                  <div className="review-author">
+                    <span className="review-name">{r.name}</span>
+                    <span className="review-role">{r.role}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="reviews-dots">
+            {reviews.map((_, i) => (
+              <button
+                key={i}
+                className={`reviews-dot${reviewIdx === i ? " active" : ""}`}
+                onClick={() => setReviewIdx(i)}
+                aria-label={`Отзыв ${i + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="section pricing" id="pricing">
         <div className="container">
           <div className="sec-label">Стоимость</div>
-          <h2 className="sec-title">Выберите формат</h2>
-          <div className="pricing-grid">
+          <h2 className="sec-title">Формат обучения</h2>
+          <div className="pricing-grid pricing-single">
             {pricing.map((p) => (
-              <div key={p.name} className={`pricing-card${p.featured ? " pricing-card-featured" : ""}`}>
-                {p.featured && <div className="pc-badge">Рекомендуем</div>}
-                <div className="pc-name">{p.name}</div>
+              <div key={p.name} className="pricing-card">
+                <div className="pc-name">Онлайн-курс</div>
                 <div className="pc-price">{p.price}</div>
                 <div className="pc-installment">{p.installment}</div>
                 <ul className="pc-features">
-                  {p.features.map(( f) => (
+                  {p.features.map((f) => (
                     <li key={f}>{f}</li>
                   ))}
                 </ul>
