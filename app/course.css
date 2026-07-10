@@ -652,13 +652,14 @@
 /* ============================
    Author — big warm portrait
    ============================ */
-.author { background: var(--paper-alt); }
+.author { background: var(--paper); }
 .author-wrap {
     display: grid;
     grid-template-columns: 380px 1fr;
     gap: 72px;
     align-items: center;
 }
+.author-info { text-align: left; }
 .author-img-wrap { position: relative; }
 .author-img-wrap::before {
     content: '';
