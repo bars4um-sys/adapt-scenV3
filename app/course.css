@@ -786,7 +786,7 @@
 /* ============================
    Skills
    ============================ */
-.skills { background: var(--paper); }
+.skills { background: var(--paper-alt); }
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -819,7 +819,7 @@
 /* ============================
    Reviews (carousel)
    ============================ */
-.reviews { background: var(--paper-alt); }
+.reviews { background: var(--paper); }
 .reviews-carousel {
     position: relative;
     overflow: hidden;
@@ -997,7 +997,7 @@
 /* ============================
    FAQ
    ============================ */
-.faq { background: var(--paper); }
+.faq { background: var(--paper-alt); }
 .faq-list { max-width: 760px; }
 .faq-item { border-bottom: 1px solid var(--line); }
 .faq-question {
