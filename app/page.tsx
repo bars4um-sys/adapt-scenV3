@@ -356,7 +356,7 @@ export default function Page() {
           </div>
         </div>
         <div className="hero-right">
-          <img src={`${basePath}/hero-cinema.png`} alt="Открытая книга и киноплёнка в тёплом свете" className="hero-photo" />
+          <img src={`${basePath}/hero-cinema.webp`} alt="Открытая книга и киноплёнка в тёплом свете" className="hero-photo" />
           <div className="hero-photo-overlay" />
           <div className="hero-quote-card">
             <span className="hero-quote-mark">{'"'}</span>
@@ -470,7 +470,7 @@ export default function Page() {
         <div className="container">
           <div className="author-wrap">
             <div className="author-img-wrap">
-              <img src={`${basePath}/author-warm.png`} alt="Екатерина Москвина" className="author-photo" />
+              <img src={`${basePath}/author-warm.webp`} alt="Екатерина Москвина" className="author-photo" />
             </div>
             <div className="author-info">
               <div className="sec-label">Автор курса</div>
@@ -642,7 +642,7 @@ export default function Page() {
       </section>
 
       <section className="cta-section">
-        <img src={`${basePath}/cta-cinema.png`} alt="" className="cta-bg" aria-hidden="true" />
+        <img src={`${basePath}/cta-cinema.webp`} alt="" className="cta-bg" aria-hidden="true" />
         <div className="cta-overlay" />
         <div className="cta-inner">
           <h2 className="cta-title">Начните писать свой сценарий</h2>
