@@ -348,7 +348,7 @@ export default function Page() {
           </div>
           <div className="hero-actions">
             <a href="#pricing" className="btn btn-primary">
-              Выбрать тариф →
+              Записаться →
             </a>
             <a href="#program" className="btn-ghost">
               Программа курса
