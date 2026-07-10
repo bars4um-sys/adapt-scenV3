@@ -596,25 +596,24 @@ export default function Page() {
         <div className="container">
           <div className="sec-label">Стоимость</div>
           <h2 className="sec-title">Стоимость курса</h2>
-          <div className="pricing-grid pricing-single">
-            {pricing.map((p) => (
-              <div key={p.name} className="pricing-card">
-                <div className="pc-name">Онлайн-курс</div>
-                <div className="pc-price">{p.price}</div>
-                <div className="pc-installment">{p.installment}</div>
-                <ul className="pc-features">
-                  {p.features.map((f) => (
-                    <li key={f}>{f}</li>
-                  ))}
-                </ul>
-                <a
-                  href={`mailto:info@adaptscenario.ru?subject=Запись на курс — ${p.subject}`}
-                  className={p.btnClass}
-                >
-                  Записаться
-                </a>
-              </div>
-            ))}
+          <div className="pricing-layout">
+            <div className="pricing-left">
+              <div className="pl-price">{pricing[0].price}</div>
+              <div className="pl-installment">{pricing[0].installment}</div>
+              <a
+                href={`mailto:info@adaptscenario.ru?subject=Запись на курс — ${pricing[0].subject}`}
+                className="btn btn-primary"
+              >
+                Записаться
+              </a>
+            </div>
+            <div className="pricing-right">
+              <ul className="pr-features">
+                {pricing[0].features.map((f) => (
+                  <li key={f}>{f}</li>
+                ))}
+              </ul>
+            </div>
           </div>
           <p className="pricing-note">
             Беспроцентная рассрочка на два платежа — уточните при записи

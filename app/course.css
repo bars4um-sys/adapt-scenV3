@@ -924,99 +924,74 @@
 /* ============================
    Pricing
    ============================ */
-.pricing { background: var(--paper-alt); }
-.pricing-grid {
+.pricing {
+    background: var(--ink);
+    color: var(--paper);
+}
+.pricing .sec-label { color: var(--gold); }
+.pricing .sec-title { color: var(--paper); }
+.pricing-layout {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    align-items: stretch;
+    grid-template-columns: 1fr 1fr;
+    gap: 72px;
+    align-items: center;
 }
-.pricing-single {
-    max-width: 480px;
-    margin: 0 auto;
-    grid-template-columns: 1fr;
-}
-.pricing-card {
-    background: var(--c-card);
-    border: 1px solid var(--line);
-    border-radius: var(--c-radius);
-    padding: 36px 30px;
+.pricing-left {
     display: flex;
     flex-direction: column;
-    transition: var(--transition);
+    align-items: center;
+    text-align: center;
 }
-.pricing-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 18px 40px rgba(43, 38, 34, 0.08);
-}
-.pricing-card-featured {
-    background: var(--ink);
-    border-color: var(--ink);
-    position: relative;
-}
-.pricing-card-featured .pc-name { color: var(--paper-deep); }
-.pricing-card-featured .pc-price { color: var(--paper); }
-.pricing-card-featured .pc-installment { color: var(--c-muted); }
-.pricing-card-featured .pc-features li { color: var(--paper-alt); border-color: rgba(255,255,255,0.12); }
-.pricing-card-featured .pc-features li::before { color: var(--gold); }
-.pc-badge {
-    display: inline-flex;
-    background: var(--c-accent);
-    color: #FCF7EE;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    padding: 5px 14px;
-    border-radius: 100px;
-    margin-bottom: 20px;
-    width: fit-content;
-}
-.pc-name {
-    font-size: 13px;
-    color: var(--c-muted);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin-bottom: 12px;
-}
-.pc-price {
+.pl-price {
     font-family: var(--font-display);
-    font-size: 38px;
+    font-size: clamp(48px, 6vw, 64px);
     font-weight: 700;
-    color: var(--ink);
-    margin-bottom: 4px;
+    color: var(--paper);
     line-height: 1;
-    letter-spacing: -1px;
+    letter-spacing: -2px;
+    margin-bottom: 8px;
 }
-.pc-installment { font-size: 14px; color: var(--c-muted); margin-bottom: 28px; }
-.pc-features { flex: 1; margin-bottom: 28px; }
-.pc-features li {
+.pl-installment {
+    font-size: 16px;
+    color: var(--c-muted);
+    margin-bottom: 32px;
+}
+.pricing-left .btn-primary {
+    min-width: 220px;
+}
+.pricing-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.pr-features { list-style: none; }
+.pr-features li {
     display: flex;
     align-items: flex-start;
-    gap: 12px;
-    padding: 11px 0;
-    font-size: 15px;
-    color: var(--ink-soft);
-    border-bottom: 1px solid var(--line);
+    gap: 14px;
+    padding: 12px 0;
+    font-size: 16px;
+    color: var(--paper-alt);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     line-height: 1.5;
 }
-.pc-features li:last-child { border-bottom: none; }
-.pc-features li::before {
-    content: '→';
-    color: var(--c-accent);
+.pr-features li:last-child { border-bottom: none; }
+.pr-features li::before {
+    content: '✓';
+    color: var(--gold);
     flex-shrink: 0;
     font-weight: 700;
-    margin-top: 1px;
+    font-size: 14px;
+    margin-top: 2px;
 }
-.pricing-card .btn { width: 100%; }
-.pricing-card-featured .btn-primary { background: var(--c-accent); color: #FCF7EE; }
 .pricing-note {
     text-align: center;
-    margin-top: 32px;
+    margin-top: 40px;
     font-size: 14px;
     color: var(--c-muted);
 }
+.pricing-note a { color: var(--gold); }
+.pricing-note a:hover { text-decoration: underline; }
 
 /* ============================
    FAQ
@@ -1136,7 +1111,8 @@
     .hero { grid-template-columns: 1fr; }
     .hero-right { min-height: 60vh; }
     .hero-left { padding: 48px 32px; }
-    .about-grid, .skills-grid, .pricing-grid { grid-template-columns: 1fr; }
+    .about-grid, .skills-grid { grid-template-columns: 1fr; }
+    .pricing-layout { grid-template-columns: 1fr; gap: 40px; }
     .author-wrap { grid-template-columns: 1fr; gap: 40px; }
     .author-img-wrap { max-width: 320px; }
     .film-acc-header { grid-template-columns: 70px 1fr 24px; }
@@ -1149,6 +1125,8 @@
     .section { padding: 72px 0; }
     .review-card { padding: 36px 24px; }
     .review-text { font-size: 15px; }
+    .pricing-layout { gap: 32px; }
+    .pricing-left .btn-primary { width: 100%; }
     .nav-links {
         position: fixed;
         top: 72px;
