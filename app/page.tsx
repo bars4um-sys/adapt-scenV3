@@ -485,22 +485,22 @@ export default function Page() {
 
               <div className="author-books">
                 <span className="author-subtitle">Книги автора</span>
-                <div className="author-books-row">
+                  <div className="author-books-row">
                   <div className="ab-card">
-                    <div className="ab-cover" style={{ background: "linear-gradient(135deg, #2b5876, #4e4376)" }}>
-                      <span>Художественный мир<br />Георга Бюхнера</span>
+                    <div className="ab-cover">
+                      <img src={`${basePath}/Buchner.webp`} alt="Художественный мир Георга Бюхнера" />
                     </div>
                     <div className="ab-meta">Прометей, 2007</div>
                   </div>
                   <div className="ab-card">
-                    <div className="ab-cover" style={{ background: "linear-gradient(135deg, #644b3a, #8b6b4a, #a0845c)" }}>
-                      <span>Символическая<br />реальность</span>
+                    <div className="ab-cover">
+                      <img src={`${basePath}/SimReal.webp`} alt="Символическая реальность" />
                     </div>
                     <div className="ab-meta">Глоба-Ком / ЯСК, 2017</div>
                   </div>
                   <div className="ab-card">
-                    <div className="ab-cover" style={{ background: "linear-gradient(135deg, #8e2b30, #c94548, #d4726a)" }}>
-                      <span>Языковые игры:<br />от слова к кадру</span>
+                    <div className="ab-cover">
+                      <img src={`${basePath}/LangGame.webp`} alt="Языковые игры: от слова к кадру" />
                     </div>
                     <div className="ab-meta">Канон+, 2023</div>
                   </div>
