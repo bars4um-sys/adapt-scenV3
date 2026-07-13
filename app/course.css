@@ -971,6 +971,20 @@
     padding: 13px 22px;
     white-space: nowrap;
 }
+.contact-email {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 14px;
+    font-size: 14px;
+    color: var(--c-muted);
+}
+.contact-email svg {
+    flex-shrink: 0;
+}
+.contact-email--light {
+    color: var(--paper-deep);
+}
 
 .pricing-right {
     display: flex;
