@@ -971,15 +971,7 @@
     padding: 13px 22px;
     white-space: nowrap;
 }
-.contact-row--white .btn {
-    background: rgba(255, 255, 255, 0.15);
-    color: var(--paper);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-}
-.contact-row--white .btn:hover {
-    background: rgba(255, 255, 255, 0.95);
-    color: var(--c-accent);
-}
+
 .pricing-right {
     display: flex;
     flex-direction: column;

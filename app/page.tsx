@@ -611,7 +611,7 @@ export default function Page() {
                   href="https://t.me/sapohrap"
                   target="_blank"
                   rel="noopener"
-                  className="btn btn-dark"
+                  className="btn btn-white"
                 >
                   ✈ Telegram
                 </a>
@@ -619,7 +619,7 @@ export default function Page() {
                   href="https://wa.me/79055425417"
                   target="_blank"
                   rel="noopener"
-                  className="btn btn-dark"
+                  className="btn btn-white"
                 >
                   💬 WhatsApp
                 </a>
@@ -665,7 +665,7 @@ export default function Page() {
         <div className="cta-inner">
           <h2 className="cta-title">Начните писать свой сценарий</h2>
           <p className="cta-desc">Превратите любимый текст в кино — от первой страницы до готового поэпизодника.</p>
-          <div className="contact-row contact-row--white">
+          <div className="contact-row">
             <a
               href={`mailto:MosKschule@yandex.ru?subject=Запись на курс&body=Здравствуйте! Хочу записаться на курс. Меня зовут `}
               className="btn btn-white"
