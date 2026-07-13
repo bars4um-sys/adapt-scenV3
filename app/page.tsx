@@ -615,14 +615,6 @@ export default function Page() {
                 >
                   ✈ Telegram
                 </a>
-                <a
-                  href="https://wa.me/79055425417"
-                  target="_blank"
-                  rel="noopener"
-                  className="btn btn-white"
-                >
-                  💬 WhatsApp
-                </a>
               </div>
             </div>
             <div className="pricing-right">
@@ -679,14 +671,6 @@ export default function Page() {
               className="btn btn-white"
             >
               ✈ Telegram
-            </a>
-            <a
-              href="https://wa.me/79055425417"
-              target="_blank"
-              rel="noopener"
-              className="btn btn-white"
-            >
-              💬 WhatsApp
             </a>
           </div>
           <p className="cta-note">Следующий поток — уточните дату при записи</p>
