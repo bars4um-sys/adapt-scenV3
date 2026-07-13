@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react"
 import "./course.css"
 
-const basePath = "/adapt-scenV3"
+const basePath = ""
 
 const Chevron = ({ className }: { className: string }) => (
   <svg className={className} width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth={2}>
@@ -532,7 +532,7 @@ export default function Page() {
                 </div>
               </div>
 
-              <a href="https://bars4um-sys.github.io/KateM/" target="_blank" rel="noopener" className="btn btn-dark author-portfolio-btn">
+              <a href="https://kinomagica.ru/" target="_blank" rel="noopener" className="btn btn-dark author-portfolio-btn">
                 Полное портфолио →
               </a>
             </div>

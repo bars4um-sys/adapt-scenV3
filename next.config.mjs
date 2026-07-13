@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  basePath: '/adapt-scenV3',
-  assetPrefix: '/adapt-scenV3/',
+  basePath: '',
+  assetPrefix: '',
   trailingSlash: true,
   typescript: {
     ignoreBuildErrors: true,
