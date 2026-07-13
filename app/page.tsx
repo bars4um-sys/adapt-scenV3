@@ -602,7 +602,7 @@ export default function Page() {
               <div className="pl-installment">{pricing[0].installment}</div>
               <div className="contact-row">
                 <a
-                  href={`mailto:MosKschule@yandex.ru?subject=Запись на курс&body=Здравствуйте! Хочу записаться на курс. Меня зовут `}
+                  href="mailto:MosKschule@yandex.ru?subject=%D0%97%D0%B0%D0%BF%D0%B8%D1%81%D1%8C%20%D0%BD%D0%B0%20%D0%BA%D1%83%D1%80%D1%81&body=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BD%D0%B0%20%D0%BA%D1%83%D1%80%D1%81.%20%D0%9C%D0%B5%D0%BD%D1%8F%20%D0%B7%D0%BE%D0%B2%D1%83%D1%82%20"
                   className="btn btn-primary"
                 >
                   ✉ Записаться
@@ -659,7 +659,7 @@ export default function Page() {
           <p className="cta-desc">Превратите любимый текст в кино — от первой страницы до готового поэпизодника.</p>
           <div className="contact-row">
             <a
-              href={`mailto:MosKschule@yandex.ru?subject=Запись на курс&body=Здравствуйте! Хочу записаться на курс. Меня зовут `}
+              href="mailto:MosKschule@yandex.ru?subject=%D0%97%D0%B0%D0%BF%D0%B8%D1%81%D1%8C%20%D0%BD%D0%B0%20%D0%BA%D1%83%D1%80%D1%81&body=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BD%D0%B0%20%D0%BA%D1%83%D1%80%D1%81.%20%D0%9C%D0%B5%D0%BD%D1%8F%20%D0%B7%D0%BE%D0%B2%D1%83%D1%82%20"
               className="btn btn-white"
             >
               ✉ Записаться
