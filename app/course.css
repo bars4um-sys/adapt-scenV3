@@ -960,6 +960,26 @@
 .pricing-left .btn-primary {
     min-width: 220px;
 }
+.contact-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+.contact-row .btn {
+    font-size: 14px;
+    padding: 13px 22px;
+    white-space: nowrap;
+}
+.contact-row--white .btn {
+    background: rgba(255, 255, 255, 0.15);
+    color: var(--paper);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.contact-row--white .btn:hover {
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--c-accent);
+}
 .pricing-right {
     display: flex;
     flex-direction: column;
@@ -1127,7 +1147,8 @@
     .review-card { padding: 36px 24px; }
     .review-text { font-size: 15px; }
     .pricing-layout { gap: 32px; }
-    .pricing-left .btn-primary { width: 100%; }
+    .contact-row { flex-direction: column; align-items: stretch; }
+    .contact-row .btn { width: 100%; }
     .nav-links {
         position: fixed;
         top: 72px;

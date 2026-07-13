@@ -600,12 +600,30 @@ export default function Page() {
             <div className="pricing-left">
               <div className="pl-price">{pricing[0].price}</div>
               <div className="pl-installment">{pricing[0].installment}</div>
-              <a
-                href={`mailto:info@adaptscenario.ru?subject=Запись на курс — ${pricing[0].subject}`}
-                className="btn btn-primary"
-              >
-                Записаться
-              </a>
+              <div className="contact-row">
+                <a
+                  href={`mailto:MosKschule@yandex.ru?subject=Запись на курс&body=Здравствуйте! Хочу записаться на курс. Меня зовут `}
+                  className="btn btn-primary"
+                >
+                  ✉ Записаться
+                </a>
+                <a
+                  href="https://t.me/sapohrap"
+                  target="_blank"
+                  rel="noopener"
+                  className="btn btn-dark"
+                >
+                  ✈ Telegram
+                </a>
+                <a
+                  href="https://wa.me/79055425417"
+                  target="_blank"
+                  rel="noopener"
+                  className="btn btn-dark"
+                >
+                  💬 WhatsApp
+                </a>
+              </div>
             </div>
             <div className="pricing-right">
               <ul className="pr-features">
@@ -647,9 +665,30 @@ export default function Page() {
         <div className="cta-inner">
           <h2 className="cta-title">Начните писать свой сценарий</h2>
           <p className="cta-desc">Превратите любимый текст в кино — от первой страницы до готового поэпизодника.</p>
-          <a href="#pricing" className="btn btn-white">
-            Записаться
-          </a>
+          <div className="contact-row contact-row--white">
+            <a
+              href={`mailto:MosKschule@yandex.ru?subject=Запись на курс&body=Здравствуйте! Хочу записаться на курс. Меня зовут `}
+              className="btn btn-white"
+            >
+              ✉ Записаться
+            </a>
+            <a
+              href="https://t.me/sapohrap"
+              target="_blank"
+              rel="noopener"
+              className="btn btn-white"
+            >
+              ✈ Telegram
+            </a>
+            <a
+              href="https://wa.me/79055425417"
+              target="_blank"
+              rel="noopener"
+              className="btn btn-white"
+            >
+              💬 WhatsApp
+            </a>
+          </div>
           <p className="cta-note">Следующий поток — уточните дату при записи</p>
         </div>
       </section>
@@ -658,7 +697,7 @@ export default function Page() {
         <div className="container footer-inner">
           <div className="footer-logo">Адаптированный сценарий</div>
           <div className="footer-contacts">
-            <span>info@adaptscenario.ru</span>
+            <span>MosKschule@yandex.ru</span>
           </div>
           <div className="footer-copy">© 2026 Екатерина Москвина</div>
         </div>
