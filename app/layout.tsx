@@ -22,6 +22,30 @@ export const metadata: Metadata = {
   description:
     'Онлайн-курс Екатерины Москвиной: научитесь превращать книги и пьесы в сценарии. 15 занятий с личным разбором вашего проекта.',
   generator: 'v0.app',
+  openGraph: {
+    type: 'website',
+    siteName: 'Адаптированный сценарий',
+    title: 'Адаптированный сценарий — Онлайн-курс',
+    description:
+      'Онлайн-курс Екатерины Москвиной: научитесь превращать книги и пьесы в сценарии. 15 занятий с личным разбором вашего проекта.',
+    url: 'https://course.kinomagica.ru',
+    locale: 'ru_RU',
+    images: [
+      {
+        url: 'https://course.kinomagica.ru/og-preview.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Адаптированный сценарий — Онлайн-курс',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Адаптированный сценарий — Онлайн-курс',
+    description:
+      'Онлайн-курс Екатерины Москвиной: научитесь превращать книги и пьесы в сценарии. 15 занятий с личным разбором вашего проекта.',
+    images: ['https://course.kinomagica.ru/og-preview.jpg'],
+  },
   icons: {
     icon: [
       {
