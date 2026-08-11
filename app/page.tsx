@@ -190,6 +190,12 @@ const pricing = [
   },
 ]
 
+const featuredReview = {
+  name: "Прохор Прохоров",
+  role: "Режиссёр",
+  text: "Хочу поблагодарить Екатерину за прекрасный курс «Адаптированный сценарий: экранизация классики»! Начиная курс, я не отдавал себе отчёт в том, что адаптация — отдельный вид сценарного мастерства, имеющий массу сложностей, которые в полной мере осознаёшь только в процессе изучения. Однозначно рекомендую курс для сценаристов и режиссёров (!), планирующих адаптировать любое художественное произведение в киносценарий. И отдельно хочу поблагодарить Екатерину за прекрасную атмосферу на курсе и одновременно с этим за строгое соблюдение тайминга: точная и чёткая подача материала с последующим комфортным и подробным обсуждением в группе на конкретных примерах из разных литературных жанров. И если до начала курса мне было интересно просто понять принципы адаптации, то по окончании появилось желание написать сценарии (а затем и снять) по нескольким любимым литературным произведениям. Уверен, что пройденный курс был максимально полезным для этого.",
+}
+
 const reviews = [
   {
     name: "Анна К.",
@@ -260,7 +266,6 @@ export default function Page() {
   const [openProg, setOpenProg] = useState<number | null>(null)
   const [openFilm, setOpenFilm] = useState<number | null>(null)
   const [openFaq, setOpenFaq] = useState<number | null>(null)
-  const [reviewIdx, setReviewIdx] = useState(0)
   const rootRef = useRef<HTMLDivElement>(null)
 
   useReveal()
@@ -270,16 +275,6 @@ export default function Page() {
     window.addEventListener("scroll", onScroll)
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setReviewIdx((prev) => (prev + 1) % reviews.length)
-    }, 5000)
-    return () => clearInterval(timer)
-  }, [])
-
-  const prevReview = () => setReviewIdx((prev) => (prev - 1 + reviews.length) % reviews.length)
-  const nextReview = () => setReviewIdx((prev) => (prev + 1) % reviews.length)
 
   const navItems = [
     ["#about", "О курсе"],
@@ -559,13 +554,18 @@ export default function Page() {
         <div className="container">
           <div className="sec-label">Отзывы</div>
           <h2 className="sec-title">Что говорят студенты</h2>
-          <div className="reviews-carousel">
-            <button className="reviews-arrow reviews-arrow-left" onClick={prevReview} aria-label="Предыдущий отзыв">
-              <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth={2}><path d="M12.5 5l-5 5 5 5" /></svg>
-            </button>
-            <div className="reviews-track" style={{ transform: `translateX(-${reviewIdx * 100}%)` }}>
+          <div className="reviews-grid">
+            <div className="review-card review-card-featured">
+              <div className="review-avatar featured">{featuredReview.name.charAt(0)}</div>
+              <p className="review-text">{`"${featuredReview.text}"`}</p>
+              <div className="review-author">
+                <span className="review-name">{featuredReview.name}</span>
+                <span className="review-role">{featuredReview.role}</span>
+              </div>
+            </div>
+            <div className="reviews-side">
               {reviews.map((r) => (
-                <div key={r.name} className="review-card">
+                <div key={r.name} className="review-card review-card-small">
                   <div className="review-avatar">{r.name.charAt(0)}</div>
                   <p className="review-text">{`"${r.text}"`}</p>
                   <div className="review-author">
@@ -575,19 +575,6 @@ export default function Page() {
                 </div>
               ))}
             </div>
-            <button className="reviews-arrow reviews-arrow-right" onClick={nextReview} aria-label="Следующий отзыв">
-              <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth={2}><path d="M7.5 5l5 5-5 5" /></svg>
-            </button>
-          </div>
-          <div className="reviews-dots">
-            {reviews.map((_, i) => (
-              <button
-                key={i}
-                className={`reviews-dot${reviewIdx === i ? " active" : ""}`}
-                onClick={() => setReviewIdx(i)}
-                aria-label={`Отзыв ${i + 1}`}
-              />
-            ))}
           </div>
         </div>
       </section>
