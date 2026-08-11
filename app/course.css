@@ -214,7 +214,7 @@
 }
 .nav-links a:hover { color: var(--c-accent); }
 
-.nav-cta {
+.course .nav-cta {
     background: var(--c-accent);
     color: #FCF7EE;
     font-size: 14px;
@@ -224,7 +224,7 @@
     transition: var(--transition);
     flex-shrink: 0;
 }
-.nav-cta:hover { background: var(--c-accent-deep); transform: translateY(-1px); }
+.course .nav-cta:hover { background: var(--c-accent-deep); transform: translateY(-1px); }
 
 .burger {
     display: none;
