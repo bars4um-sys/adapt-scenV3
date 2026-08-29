@@ -672,12 +672,10 @@ export default function Page() {
           <div className="footer-contacts">
             <span>MosKschule@yandex.ru</span>
           </div>
-          <div className="footer-copy">
-            <span>© 2026 Екатерина Москвина</span>
-            <a href="https://och-studio.ru" target="_blank" rel="noopener" className="footer-design">
-              Дизайн и вёрстка OCH-Studio
-            </a>
-          </div>
+          <div className="footer-copy">© 2026 Екатерина Москвина</div>
+          <a href="https://och-studio.ru" target="_blank" rel="noopener" className="footer-design">
+            Дизайн и вёрстка OCH-Studio
+          </a>
         </div>
       </footer>
     </div>
